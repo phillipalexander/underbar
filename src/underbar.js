@@ -32,7 +32,14 @@ var _ = {};
 	};
 
 	// Call iterator(value, key, collection) for each element of collection
-	_.each = function (obj, iterator) {};
+	_.each = function (obj, iterator) {
+		var cleanObj = Array.prototype.slice.call(obj);
+		if (Array.isArray(cleanObj)) {
+			for (var i = 0; i < cleanObj.length; i += 1) {
+				iterator(cleanObj[i], i, cleanObj);
+			}
+		}
+	};
 
 	/*
 	 * TIP: Here's an example of a function that needs to iterate, which we've

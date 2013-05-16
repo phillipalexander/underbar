@@ -44,51 +44,51 @@ describe("first", function () {
 
 });
 
-// describe("each", function () {
-// 	it("should provide value and iteration count", function () {
-// 		var letters = ['a', 'b', 'c'];
-// 		var iterations = [];
+describe("each", function () {
+	it("should provide value and iteration count", function () {
+		var letters = ['a', 'b', 'c'];
+		var iterations = [];
 
-// 		_.each(letters, function (letter, index, collection) {
-// 			iterations.push([letter, index, collection]);
-// 		});
+		_.each(letters, function (letter, index, collection) {
+			iterations.push([letter, index, collection]);
+		});
 
-// 		expect(iterations).to.eql([
-// 			['a', 0, letters],
-// 			['b', 1, letters],
-// 			['c', 2, letters]
-// 		]);
-// 	});
-// });
+		expect(iterations).to.eql([
+			['a', 0, letters],
+			['b', 1, letters],
+			['c', 2, letters]
+		]);
+	});
+});
 
-// describe("indexOf", function () {
+describe("indexOf", function () {
 
-// 	it("should be able to compute indexOf even when the native function is undefined", function () {
-// 		var numbers = [1, 2, 3];
-// 		numbers.indexOf = null;
-// 		expect(_.indexOf(numbers, 2)).to.be(1);
-// 	});
+	it("should be able to compute indexOf even when the native function is undefined", function () {
+		var numbers = [1, 2, 3];
+		numbers.indexOf = null;
+		expect(_.indexOf(numbers, 2)).to.be(1);
+	});
 
-// 	it("should work on an arguments object", function () {
-// 		var args = returnArguments(1, 2, 3);
-// 		expect(_.indexOf(args, 2)).to.be(1);
-// 	});
+	it("should work on an arguments object", function () {
+		var args = returnArguments(1, 2, 3);
+		expect(_.indexOf(args, 2)).to.be(1);
+	});
 
-// 	it("should not have 35 in the list", function () {
-// 		var numbers = [10, 20, 30, 40, 50];
-// 		expect(_.indexOf(numbers, 35)).to.be(-1);
-// 	});
+	it("should not have 35 in the list", function () {
+		var numbers = [10, 20, 30, 40, 50];
+		expect(_.indexOf(numbers, 35)).to.be(-1);
+	});
 
-// 	it("should have 40 in the list", function () {
-// 		var numbers = [10, 20, 30, 40, 50];
-// 		expect(_.indexOf(numbers, 40)).to.be(3);
-// 	});
+	it("should have 40 in the list", function () {
+		var numbers = [10, 20, 30, 40, 50];
+		expect(_.indexOf(numbers, 40)).to.be(3);
+	});
 
-// 	it("should have 40 in the list even when there are duplicates", function () {
-// 		var numbers = [1, 40, 40, 40, 40, 40, 40, 40, 50, 60, 70];
-// 		expect(_.indexOf(numbers, 40)).to.be(1);
-// 	});
-// });
+	it("should have 40 in the list even when there are duplicates", function () {
+		var numbers = [1, 40, 40, 40, 40, 40, 40, 40, 50, 60, 70];
+		expect(_.indexOf(numbers, 40)).to.be(1);
+	});
+});
 
 // describe("filter", function () {
 // 	it("should return all even numbers in an array", function () {
