@@ -4,7 +4,18 @@ var _ = {};
 
 	// Return an array of the last n elements of an array. If n is undefined,
 	// return just the last element.
-	_.last = function (array, n) {};
+	_.last = function (array, n) {
+		var cleanArray = Array.prototype.slice.call(array); // "should work on an arguments object"
+		if (n === 0) {
+			return [];
+		} else if (!n) { // "should pull the last element from an array (if missing second arg)"// "should accept an index argument"
+			return cleanArray[cleanArray.length - 1];
+		} else if (n > cleanArray.length) {
+			return cleanArray;
+		} else {
+			return cleanArray.slice(cleanArray.length - n, cleanArray.length);
+		}
+	};
 
 	// Like last, but for the first elements
 	_.first = function (array, n) {
