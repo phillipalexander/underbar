@@ -126,25 +126,25 @@ describe("reject", function () {
 	});
 });
 
-// describe("uniq", function () {
-// 	it("should return all unique values contained in an unsorted array", function () {
-// 		var list = [1, 2, 1, 3, 1, 4];
-// 		expect(_.uniq(list)).to.eql([1, 2, 3, 4]);
-// 	});
+describe("uniq", function () {
+	it("should return all unique values contained in an unsorted array", function () {
+		var list = [1, 2, 1, 3, 1, 4];
+		expect(_.uniq(list)).to.eql([1, 2, 3, 4]);
+	});
 
-// 	it("should handle iterators that work with a sorted array", function () {
-// 		var iterator = function (value) {
-// 			return value + 1;
-// 		};
-// 		var list = [1, 2, 2, 3, 4, 4];
-// 		expect(_.uniq(list, true, iterator)).to.eql([1, 2, 3, 4]);
-// 	});
+	it("should handle iterators that work with a sorted array", function () {
+		var iterator = function (value) {
+			return value + 1;
+		};
+		var list = [1, 2, 2, 3, 4, 4];
+		expect(_.uniq(list, true, iterator)).to.eql([1, 2, 3, 4]);
+	});
 
-// 	it("should work on an arguments object", function () {
-// 		var args = returnArguments(1, 2, 1, 3, 1, 4);
-// 		expect(_.uniq(args)).to.eql([1, 2, 3, 4]);
-// 	});
-// });
+	it("should work on an arguments object", function () {
+		var args = returnArguments(1, 2, 1, 3, 1, 4);
+		expect(_.uniq(args)).to.eql([1, 2, 3, 4]);
+	});
+});
 
 // describe("map", function () {
 // 	it("should apply a function to every value in an array", function () {
