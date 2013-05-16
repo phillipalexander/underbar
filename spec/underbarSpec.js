@@ -90,23 +90,23 @@ describe("indexOf", function () {
 	});
 });
 
-// describe("filter", function () {
-// 	it("should return all even numbers in an array", function () {
-// 		var isEven = function (num) {
-// 			return num % 2 === 0;
-// 		};
-// 		var evens = _.filter([1, 2, 3, 4, 5, 6], isEven);
-// 		expect(evens).to.eql([2, 4, 6]);
-// 	});
+describe("filter", function () {
+	it("should return all even numbers in an array", function () {
+		var isEven = function (num) {
+			return num % 2 === 0;
+		};
+		var evens = _.filter([1, 2, 3, 4, 5, 6], isEven);
+		expect(evens).to.eql([2, 4, 6]);
+	});
 
-// 	it("should return all odd numbers in an array", function () {
-// 		var isOdd = function (num) {
-// 			return num % 2 !== 0;
-// 		};
-// 		var odds = _.filter([1, 2, 3, 4, 5, 6], isOdd);
-// 		expect(odds).to.eql([1, 3, 5]);
-// 	});
-// });
+	it("should return all odd numbers in an array", function () {
+		var isOdd = function (num) {
+			return num % 2 !== 0;
+		};
+		var odds = _.filter([1, 2, 3, 4, 5, 6], isOdd);
+		expect(odds).to.eql([1, 3, 5]);
+	});
+});
 
 // describe("reject", function () {
 // 	it("should reject all even numbers", function () {
