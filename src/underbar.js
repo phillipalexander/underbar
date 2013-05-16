@@ -19,8 +19,16 @@ var _ = {};
 
 	// Like last, but for the first elements
 	_.first = function (array, n) {
-		// TIP: you can often re-use similar functions in clever ways, like so:
-		return _.last(array.reverse(), n);
+		var cleanArray = Array.prototype.slice.call(array);
+		if (n === 0) {
+			return [];
+		} else if (!n) {
+			return cleanArray[0];
+		} else if (n > cleanArray.length) {
+			return cleanArray;
+		} else {
+			return cleanArray.slice(0, n);
+		}
 	};
 
 	// Call iterator(value, key, collection) for each element of collection
