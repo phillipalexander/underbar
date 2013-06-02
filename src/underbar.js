@@ -135,8 +135,22 @@ var _ = {};
 
 	// Calls the method named by methodName on each value in the list.
 	_.invoke = function (list, methodName) {
-		_.each(list, Array.prototype.call(methodName))
+		var cleanList = Array.prototype.slice.call(list);
+		var result = [];
+		var isFunction = typeof methodName === "function";
+		var isString = typeof methodName === "string"
+		if (true) {
+			for (var i = 0; i < cleanList.length; i += 1) {
+				// debugger;
+				// result.push(cleanList[i][methodName]()); /*string*/
+				// result.push(methodName.call(cleanList[i])); /*function*/
+				result.push( isString && cleanList[i][methodName]() || isFunction && methodName.call(cleanList[i]));
+			}
+		};
+		return result;
 	};
+
+	// value[methodName].call(value) //will work on a string
 
 	// Reduces an array or object to a single value by repetitively calling
 	// iterator(previousValue, item) for each item. previousValue should be
