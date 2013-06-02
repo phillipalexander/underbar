@@ -31,13 +31,19 @@ var _ = {};
 		}
 	};
 
+	/**
+	 * [the iterator argument is a function that has access to three arguments: (see below) thus, the iterator should always take the format of]
+	 *
+	 *	function (element, index, array) {
+	 *		// body...
+	 *	}
+	 */
+
 	// Call iterator(value, key, collection) for each element of collection
 	_.each = function (obj, iterator) {
-		var cleanObj = Array.prototype.slice.call(obj);
-		if (Array.isArray(cleanObj)) {
-			for (var i = 0; i < cleanObj.length; i += 1) {
-				iterator(cleanObj[i], i, cleanObj);
-			}
+		var array = Array.prototype.slice.call(obj);
+		for (var i = 0; i < array.length; i += 1) {
+			iterator(array[i], i, array);
 		}
 	};
 
