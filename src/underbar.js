@@ -41,9 +41,28 @@ var _ = {};
 
 	// Call iterator(value, key, collection) for each element of collection
 	_.each = function (obj, iterator) {
-		var array = Array.prototype.slice.call(obj);
-		for (var i = 0; i < array.length; i += 1) {
-			iterator(array[i], i, array);
+		var type = Function.prototype.call.bind(Object.prototype.toString);
+		var typeObj = type(obj);
+		var InputIsArray = typeObj === '[object Array]';
+		var InputIsObject = typeObj === '[object Object]';
+		var InputIsArguments = typeObj == '[object Arguments]';
+
+		// QUESTION⁄: Why doesn't this work? Why did I have to use type() instead?
+		// var InputIsArguments = toString.call(obj) == '[object Arguments]';
+
+		var array = [];
+		var i;
+		var key;
+
+		if (InputIsArguments || InputIsArray) {
+			array = Array.prototype.slice.call(obj);
+			for (i = 0; i < array.length; i += 1) {
+				iterator(array[i], i, array);
+			}
+		} else if (InputIsObject) {
+			for (key in obj) {
+				iterator(obj[key], key, obj);
+			}
 		}
 	};
 
