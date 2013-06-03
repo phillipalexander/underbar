@@ -219,7 +219,19 @@ var _ = {};
 	// Determine whether any of the elements pass a truth test. If no iterator is
 	// provided, provide a default one
 	_.any = function (obj, iterator) {
-		// TIP: re-use every() here
+		iterator = iterator || function (value, index, array) {
+			if (value === true || value === 'yes') {
+				result = true;
+			}
+		};
+
+		var result = false;
+		_.each(obj, function (value, index, array) {
+			if (iterator(value)) {
+				result = true;
+			}
+		});
+		return result;
 	};
 
 	/*
@@ -238,7 +250,9 @@ var _ = {};
 	//     bla: "even more stuff"
 	//   }); // obj1 now contains key1, key2, key3 and bla
 	//
-	_.extend = function (obj) {};
+	_.extend = function (obj) {
+
+	};
 
 	// Like extend, but doesn't ever overwrite a key that already
 	// exists in obj

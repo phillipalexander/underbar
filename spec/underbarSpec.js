@@ -283,58 +283,58 @@ describe("every", function () {
 	});
 });
 
-// describe("any", function () {
-// 	var nativeSome = Array.prototype.some;
-// 	var isEven = function (number) {
-// 		return number % 2 === 0;
-// 	};
-// 	var passThrough = function (firstArgument) {
-// 		return firstArgument;
-// 	};
+describe("any", function () {
+	var nativeSome = Array.prototype.some;
+	var isEven = function (number) {
+		return number % 2 === 0;
+	};
+	var passThrough = function (firstArgument) {
+		return firstArgument;
+	};
 
-// 	beforeEach(function () {
-// 		Array.prototype.some = null;
-// 	});
-// 	afterEach(function () {
-// 		Array.prototype.some = nativeSome;
-// 	});
+	beforeEach(function () {
+		Array.prototype.some = null;
+	});
+	afterEach(function () {
+		Array.prototype.some = nativeSome;
+	});
 
-// 	it("should handle the empty set", function () {
-// 		expect(_.any([])).to.equal(false);
-// 	});
+	it("should handle the empty set", function () {
+		expect(_.any([])).to.equal(false);
+	});
 
-// 	it("should handle a set containing 'false' values", function () {
-// 		expect(_.any([false, false, false])).to.equal(false);
-// 	});
+	it("should handle a set containing 'false' values", function () {
+		expect(_.any([false, false, false])).to.equal(false);
+	});
 
-// 	it("should handle a set containing one 'true' value", function () {
-// 		expect(_.any([false, false, true])).to.equal(true);
-// 	});
+	it("should handle a set containing one 'true' value", function () {
+		expect(_.any([false, false, true])).to.equal(true);
+	});
 
-// 	it("should handle a set containing a string", function () {
-// 		expect(_.any([null, 0, 'yes', false])).to.equal(true);
-// 	});
+	it("should handle a set containing a string", function () {
+		expect(_.any([null, 0, 'yes', false])).to.equal(true);
+	});
 
-// 	it("should handle a set that contains falsy values", function () {
-// 		expect(_.any([null, 0, '', false])).to.equal(false);
-// 	});
+	it("should handle a set that contains falsy values", function () {
+		expect(_.any([null, 0, '', false])).to.equal(false);
+	});
 
-// 	it("should handle a set that contains all odd numbers", function () {
-// 		expect(_.any([1, 11, 29], isEven)).to.equal(false);
-// 	});
+	it("should handle a set that contains all odd numbers", function () {
+		expect(_.any([1, 11, 29], isEven)).to.equal(false);
+	});
 
-// 	it("should handle a set that contains an even number", function () {
-// 		expect(_.any([1, 10, 29], isEven)).to.equal(true);
-// 	});
+	it("should handle a set that contains an even number", function () {
+		expect(_.any([1, 10, 29], isEven)).to.equal(true);
+	});
 
-// 	it("should handle casting to boolean - true", function () {
-// 		expect(_.any([1], passThrough)).to.equal(true);
-// 	});
+	it("should handle casting to boolean - true", function () {
+		expect(_.any([1], passThrough)).to.equal(true);
+	});
 
-// 	it("should handle casting to boolean - false", function () {
-// 		expect(_.any([0], passThrough)).to.equal(false);
-// 	});
-// });
+	it("should handle casting to boolean - false", function () {
+		expect(_.any([0], passThrough)).to.equal(false);
+	});
+});
 
 // describe("extend", function () {
 // 	it("should extend an object with the attributes of another", function () {
