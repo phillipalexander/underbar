@@ -227,61 +227,61 @@ describe("reduce", function () {
 
 });
 
-// describe("contains", function () {
-// 	it("should return true if a collection contains a user-specified value", function () {
-// 		expect(_.contains([1, 2, 3], 2)).to.equal(true);
-// 		expect(_.contains({
-// 			moe: 1,
-// 			larry: 3,
-// 			curly: 9
-// 		}, 3)).to.equal(true);
-// 	});
+describe("contains", function () {
+	it("should return true if a collection contains a user-specified value", function () {
+		expect(_.contains([1, 2, 3], 2)).to.equal(true);
+		expect(_.contains({
+			moe: 1,
+			larry: 3,
+			curly: 9
+		}, 3)).to.equal(true);
+	});
 
-// 	it("should return false if a collection does not contain a user-specified value", function () {
-// 		expect(_.contains([1, 3, 9], 2)).to.equal(false);
-// 	});
-// });
+	it("should return false if a collection does not contain a user-specified value", function () {
+		expect(_.contains([1, 3, 9], 2)).to.equal(false);
+	});
+});
 
-// describe("every", function () {
-// 	var getValue = function (i) {
-// 		return i;
-// 	};
-// 	var isEven = function (num) {
-// 		return num % 2 === 0;
-// 	};
+describe("every", function () {
+	var getValue = function (i) {
+		return i;
+	};
+	var isEven = function (num) {
+		return num % 2 === 0;
+	};
 
-// 	it("should handle an empty set", function () {
-// 		expect(_.every([], getValue)).to.equal(true);
-// 	});
+	it("should handle an empty set", function () {
+		expect(_.every([], getValue)).to.equal(true);
+	});
 
-// 	it("should handle a set that contains only true values", function () {
-// 		expect(_.every([true, true, true], getValue)).to.equal(true);
-// 	});
+	it("should handle a set that contains only true values", function () {
+		expect(_.every([true, true, true], getValue)).to.equal(true);
+	});
 
-// 	it("should handle a set that contains one false value", function () {
-// 		expect(_.every([true, false, true], getValue)).to.equal(false);
-// 	});
+	it("should handle a set that contains one false value", function () {
+		expect(_.every([true, false, true], getValue)).to.equal(false);
+	});
 
-// 	it("should handle a set that contains even numbers", function () {
-// 		expect(_.every([0, 10, 28], isEven)).to.equal(true);
-// 	});
+	it("should handle a set that contains even numbers", function () {
+		expect(_.every([0, 10, 28], isEven)).to.equal(true);
+	});
 
-// 	it("should handle a set that contains an odd number", function () {
-// 		expect(_.every([0, 11, 28], isEven)).to.equal(false);
-// 	});
+	it("should handle a set that contains an odd number", function () {
+		expect(_.every([0, 11, 28], isEven)).to.equal(false);
+	});
 
-// 	it("should cast to boolean true", function () {
-// 		expect(_.every([1], getValue)).to.equal(true);
-// 	});
+	it("should cast to boolean true", function () {
+		expect(_.every([1], getValue)).to.equal(true);
+	});
 
-// 	it("should cast to boolean false", function () {
-// 		expect(_.every([0], getValue)).to.equal(false);
-// 	});
+	it("should cast to boolean false", function () {
+		expect(_.every([0], getValue)).to.equal(false);
+	});
 
-// 	it("should work with an array that contains several undefined values", function () {
-// 		expect(_.every([undefined, undefined, undefined], getValue)).to.equal(false);
-// 	});
-// });
+	it("should work with an array that contains several undefined values", function () {
+		expect(_.every([undefined, undefined, undefined], getValue)).to.equal(false);
+	});
+});
 
 // describe("any", function () {
 // 	var nativeSome = Array.prototype.some;

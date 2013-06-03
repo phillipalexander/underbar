@@ -207,7 +207,13 @@ var _ = {};
 
 	// Determine whether all of the elements match a truth test.
 	_.every = function (obj, iterator) {
-		// TIP: use reduce on this one!
+		var result = !obj || true;
+		_.each(obj, function (value, index, array) {
+			if (!iterator(value)) {
+				result = false;
+			}
+		});
+		return result;
 	};
 
 	// Determine whether any of the elements pass a truth test. If no iterator is
