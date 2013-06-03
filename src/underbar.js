@@ -157,15 +157,15 @@ var _ = {};
 		var cleanList = Array.prototype.slice.call(list);
 		var result = [];
 		var isFunction = typeof methodName === "function";
-		var isString = typeof methodName === "string"
+		var isString = typeof methodName === "string";
 		if (true) {
 			for (var i = 0; i < cleanList.length; i += 1) {
 				// debugger;
 				// result.push(cleanList[i][methodName]()); /*string*/
 				// result.push(methodName.call(cleanList[i])); /*function*/
-				result.push( isString && cleanList[i][methodName]() || isFunction && methodName.call(cleanList[i]));
+				result.push(isString && cleanList[i][methodName]() || isFunction && methodName.call(cleanList[i]));
 			}
-		};
+		}
 		return result;
 	};
 
@@ -184,7 +184,14 @@ var _ = {};
 	//     return total + number;
 	//   }, 0); // should be 6
 	//
-	_.reduce = function (obj, iterator, initialValue) {};
+	_.reduce = function (obj, iterator, initialValue) {
+		// var result if (!initialValue) {0};
+		var result = initialValue || 0;
+		_.each(obj, function (value) {
+			result = iterator(result, value);
+		});
+		return result;
+	};
 
 	// Determine if the array or object contains a given value (using `===`).
 	_.contains = function (collection, target) {
