@@ -251,7 +251,12 @@ var _ = {};
 	//   }); // obj1 now contains key1, key2, key3 and bla
 	//
 	_.extend = function (obj) {
-
+		// var type = Function.prototype.call.bind(Object.prototype.toString);
+		// var InputIsObject = (type(obj) === '[object Object]');
+		// var ObjectKeys = Object.Keys
+		// _.each(obj, function (value, index, array) {
+		// 	iterator body
+		// })
 	};
 
 	// Like extend, but doesn't ever overwrite a key that already
@@ -306,7 +311,21 @@ var _ = {};
 	 */
 
 	// Shuffle an array.
-	_.shuffle = function (obj) {};
+	_.shuffle = function (obj) {
+		var array = Array.prototype.slice.call(obj);
+		var i, j, swap;
+		for (i = array.length - 1; i >= 0; i--) {
+
+			// Pick a remaining element…
+			j = Math.floor(Math.random() * (i + 1));
+
+			// And swap it with the current element.
+			swap = array[i];
+			array[i] = array[j];
+			array[j] = swap;
+		}
+		return array;
+	};
 
 	/* (End of pre-course curriculum) */
 
