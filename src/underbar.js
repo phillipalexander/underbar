@@ -265,8 +265,21 @@ var _ = {};
 
 	// Like extend, but doesn't ever overwrite a key that already
 	// exists in obj
-	_.defaults = function (obj) {};
+	_.defaults = function (obj) {
+		var ObjectArgs = arguments; //access function arguments
+		for (var i = 0; i < ObjectArgs.length; i++) {
+			for (var key in ObjectArgs[i]) {
 
+				// QUESTION⁄: Why will this only work without type conversion
+				// ...when "==" is used instead of "==="
+
+				if (obj[key] == null) {
+					obj[key] = ObjectArgs[i][key];
+				}
+			}
+		}
+		return obj;
+	};
 	/*
 	 * Now we're getting into function decorators, which take in any function
 	 * and return out a new version of the function that works somewhat differently
