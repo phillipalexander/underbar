@@ -336,176 +336,176 @@ describe("any", function () {
 	});
 });
 
-// describe("extend", function () {
-// 	it("should extend an object with the attributes of another", function () {
-// 		var extended = _.extend({}, {
-// 			a: 'b'
-// 		});
-// 		expect(extended.a).to.equal('b');
-// 	});
+describe("extend", function () {
+	it("should extend an object with the attributes of another", function () {
+		var extended = _.extend({}, {
+			a: 'b'
+		});
+		expect(extended.a).to.equal('b');
+	});
 
-// 	it("should override properties found on the destination", function () {
-// 		var extended = _.extend({
-// 			a: 'x'
-// 		}, {
-// 			a: 'b'
-// 		});
-// 		expect(extended.a).to.equal('b');
-// 	});
+	it("should override properties found on the destination", function () {
+		var extended = _.extend({
+			a: 'x'
+		}, {
+			a: 'b'
+		});
+		expect(extended.a).to.equal('b');
+	});
 
-// 	it("should not override properties not found in the source", function () {
-// 		var extended = _.extend({
-// 			x: 'x'
-// 		}, {
-// 			a: 'b'
-// 		});
-// 		expect(extended.x).to.equal('x');
-// 	});
+	it("should not override properties not found in the source", function () {
+		var extended = _.extend({
+			x: 'x'
+		}, {
+			a: 'b'
+		});
+		expect(extended.x).to.equal('x');
+	});
 
-// 	it("should extend from multiple source objects", function () {
-// 		var extended = _.extend({
-// 			x: 1
-// 		}, {
-// 			a: 2
-// 		}, {
-// 			b: 3
-// 		});
-// 		expect(extended).to.eql({
-// 			x: 1,
-// 			a: 2,
-// 			b: 3
-// 		});
-// 	});
+	it("should extend from multiple source objects", function () {
+		var extended = _.extend({
+			x: 1
+		}, {
+			a: 2
+		}, {
+			b: 3
+		});
+		expect(extended).to.eql({
+			x: 1,
+			a: 2,
+			b: 3
+		});
+	});
 
-// 	it("in the case of a conflict, it should use the last property's values when extending from multiple source objects", function () {
-// 		var extended = _.extend({
-// 			x: 'x'
-// 		}, {
-// 			a: 'a',
-// 			x: 2
-// 		}, {
-// 			a: 1
-// 		});
-// 		expect(extended).to.eql({
-// 			x: 2,
-// 			a: 1
-// 		});
-// 	});
+	it("in the case of a conflict, it should use the last property's values when extending from multiple source objects", function () {
+		var extended = _.extend({
+			x: 'x'
+		}, {
+			a: 'a',
+			x: 2
+		}, {
+			a: 1
+		});
+		expect(extended).to.eql({
+			x: 2,
+			a: 1
+		});
+	});
 
-// 	it("should not copy undefined values", function () {
-// 		var extended = _.extend({}, {
-// 			a: void 0,
-// 			b: null
-// 		});
-// 		expect(extended.hasOwnProperty('a') && extended.hasOwnProperty('b')).to.be(true);
-// 	});
-// });
+	it("should not copy undefined values", function () {
+		var extended = _.extend({}, {
+			a: void 0,
+			b: null
+		});
+		expect(extended.hasOwnProperty('a') && extended.hasOwnProperty('b')).to.be(true);
+	});
+});
 
-// describe("defaults", function () {
-// 	var result, options;
+describe("defaults", function () {
+	var result, options;
 
-// 	beforeEach(function () {
-// 		options = {
-// 			zero: 0,
-// 			one: 1,
-// 			empty: "",
-// 			nan: NaN,
-// 			string: "string"
-// 		};
-// 		_.defaults(options, {
-// 			zero: 1,
-// 			one: 10,
-// 			twenty: 20
-// 		}, {
-// 			empty: "full"
-// 		}, {
-// 			nan: "nan"
-// 		}, {
-// 			word: "word"
-// 		}, {
-// 			word: "dog"
-// 		});
-// 	});
+	beforeEach(function () {
+		options = {
+			zero: 0,
+			one: 1,
+			empty: "",
+			nan: NaN,
+			string: "string"
+		};
+		_.defaults(options, {
+			zero: 1,
+			one: 10,
+			twenty: 20
+		}, {
+			empty: "full"
+		}, {
+			nan: "nan"
+		}, {
+			word: "word"
+		}, {
+			word: "dog"
+		});
+	});
 
-// 	it("should apply a value when one doesn't already exist on the target", function () {
-// 		expect(options.zero).to.equal(0);
-// 		expect(options.one).to.equal(1);
-// 		expect(options.twenty).to.equal(20);
-// 	});
+	it("should apply a value when one doesn't already exist on the target", function () {
+		expect(options.zero).to.equal(0);
+		expect(options.one).to.equal(1);
+		expect(options.twenty).to.equal(20);
+	});
 
-// 	it("should not apply a value if one already exist on the target", function () {
-// 		expect(options.empty).to.equal("");
-// 		expect(isNaN(options.nan)).to.equal(true);
-// 	});
+	it("should not apply a value if one already exist on the target", function () {
+		expect(options.empty).to.equal("");
+		expect(isNaN(options.nan)).to.equal(true);
+	});
 
-// 	it("if two identical values are passed in, the first one wins", function () {
-// 		expect(options.word).to.equal("word");
-// 	});
-// });
+	it("if two identical values are passed in, the first one wins", function () {
+		expect(options.word).to.equal("word");
+	});
+});
 
-// describe("once", function () {
-// 	it("should only run a user-defined function if it hasn't been run before", function () {
-// 		var num = 0;
-// 		var increment = _.once(function () {
-// 			num++;
-// 		});
-// 		increment();
-// 		increment();
+describe("once", function () {
+	it("should only run a user-defined function if it hasn't been run before", function () {
+		var num = 0;
+		var increment = _.once(function () {
+			num++;
+		});
+		increment();
+		increment();
 
-// 		expect(num).to.equal(1);
-// 	});
-// });
+		expect(num).to.equal(1);
+	});
+});
 
-// describe("memoize", function () {
-// 	it("a memoized function should produce the same result when called with the same arguments", function () {
-// 		var fib = function (n) {
-// 			return n < 2 ? n : fib(n - 1) + fib(n - 2);
-// 		};
-// 		expect(fib(10)).to.equal(55);
+describe("memoize", function () {
+	it("a memoized function should produce the same result when called with the same arguments", function () {
+		var fib = function (n) {
+			return n < 2 ? n : fib(n - 1) + fib(n - 2);
+		};
+		expect(fib(10)).to.equal(55);
 
-// 		var fastFib = _.memoize(fib);
-// 		expect(fastFib(10)).to.equal(55);
-// 	});
+		var fastFib = _.memoize(fib);
+		expect(fastFib(10)).to.equal(55);
+	});
 
-// 	it("should check hasOwnProperty", function () {
-// 		var passThrough = function (str) {
-// 			return str;
-// 		};
-// 		var fastPassThrough = _.memoize(passThrough);
+	it("should check hasOwnProperty", function () {
+		var passThrough = function (str) {
+			return str;
+		};
+		var fastPassThrough = _.memoize(passThrough);
 
-// 		expect(passThrough('toString')).to.equal('toString');
-// 		expect(fastPassThrough('toString')).to.equal('toString');
-// 	});
-// });
+		expect(passThrough('toString')).to.equal('toString');
+		expect(fastPassThrough('toString')).to.equal('toString');
+	});
+});
 
-// describe("delay", function () {
-// 	var clock, delayed, callback;
+describe("delay", function () {
+	var clock, delayed, callback;
 
-// 	beforeEach(function () {
-// 		clock = sinon.useFakeTimers();
-// 		callback = sinon.spy();
-// 	});
+	beforeEach(function () {
+		clock = sinon.useFakeTimers();
+		callback = sinon.spy();
+	});
 
-// 	afterEach(function () {
-// 		clock.restore();
-// 	});
+	afterEach(function () {
+		clock.restore();
+	});
 
-// 	it("should only execute the function after the specified wait time", function () {
-// 		_.delay(callback, 100);
+	it("should only execute the function after the specified wait time", function () {
+		_.delay(callback, 100);
 
-// 		clock.tick(99);
-// 		expect(callback.notCalled).to.be(true);
-// 		clock.tick(1);
-// 		expect(callback.calledOnce).to.be(true);
-// 	});
+		clock.tick(99);
+		expect(callback.notCalled).to.be(true);
+		clock.tick(1);
+		expect(callback.calledOnce).to.be(true);
+	});
 
-// 	it("should have successfully passed function arguments in", function () {
-// 		_.delay(callback, 100, 1, 2);
-// 		clock.tick(100);
+	it("should have successfully passed function arguments in", function () {
+		_.delay(callback, 100, 1, 2);
+		clock.tick(100);
 
-// 		expect(callback.calledWith(1, 2)).to.be(true);
-// 	});
-// });
+		expect(callback.calledWith(1, 2)).to.be(true);
+	});
+});
 
 describe("shuffle", function () {
 	it("should not modify the original object", function () {

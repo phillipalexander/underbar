@@ -251,12 +251,16 @@ var _ = {};
 	//   }); // obj1 now contains key1, key2, key3 and bla
 	//
 	_.extend = function (obj) {
-		// var type = Function.prototype.call.bind(Object.prototype.toString);
-		// var InputIsObject = (type(obj) === '[object Object]');
-		// var ObjectKeys = Object.Keys
-		// _.each(obj, function (value, index, array) {
-		// 	iterator body
-		// })
+		var ObjectArgs = arguments; //access function arguments
+		//reverse loop is faster—
+		//but won't work with last test...?
+		// for (var i = ObjectArgs.length - 1; i >= 0; i--) {
+		for (var i = 0; i < ObjectArgs.length; i++) {
+			for (var key in ObjectArgs[i]) {
+				obj[key] = ObjectArgs[i][key];
+			}
+		}
+		return obj;
 	};
 
 	// Like extend, but doesn't ever overwrite a key that already
